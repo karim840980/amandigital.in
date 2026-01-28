@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDS - Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="login-body">
+    <div class="login-card">
+        <div class="header-box">
+            <img src="aman100.jpg" alt="Logo" class="login-logo">
+            <h2>Create New Account</h2>
+            <p>Join Aman Group today</p>
+        </div>
+
+        <form>
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" placeholder="+91 0000000000" required>
+            </div>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="your@email.com" required>
+            </div>
+            <div class="input-group">
+                <label>Create Password</label>
+                <div class="pass-wrapper">
+                    <input type="password" id="reg-pass" placeholder="Strong password" required>
+                    <i class="fa-regular fa-eye" id="toggleRegPass"></i>
+                </div>
+            </div>
+            <button type="submit" class="btn-signin">Register Now</button>
+        </form>
+
+        <p class="login-link-text">Already have an account? <a href="login.html">Login</a></p>
+
+        <div class="contact-box">
+            <p><i class="fa-solid fa-headset"></i> Support: +91-8409805470</p>
+        </div>
+    </div>
+</body>
+
+
+    <script>
+        const toggleRegPass = document.querySelector('#toggleRegPass');
+        const password = document.querySelector('#reg-pass');
+
+        toggleRegPass.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
