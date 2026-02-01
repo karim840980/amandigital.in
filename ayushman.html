@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSHMAN SERVICE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #fff9f0;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d84315;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Ayushman Premium Gold Gradient */
+        .card {
+            background: linear-gradient(180deg, #ffd194 0%, #ffb75e 100%);
+            border-radius: 25px;
+            padding: 20px 10px;
+            text-align: center;
+            color: #5d4037;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 160px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon {
+            font-size: 40px !important;
+            margin-bottom: 8px;
+            color: #d84315;
+        }
+
+        .card h3 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+            height: 32px; /* Consistency for text height */
+        }
+
+        /* Your Signature Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .clicked {
+            transform: scale(0.94);
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">Ayushman Bharat Services</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">add_card</i>
+            <h3>Create New <br> Ayushman Card</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">file_download</i>
+            <h3>Download <br> Ayushman Card</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">view_list</i>
+            <h3>Ayushman <br> Card List</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">fact_check</i>
+            <h3>Check Card <br> Status</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">group_add</i>
+            <h3>Add Family <br> Member</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">fingerprint</i>
+            <h3>Complete <br> e-KYC</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://beneficiary.nha.gov.in/'">
+            <i class="material-icons icon">link</i>
+            <h3>Link Aadhaar <br> Card</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://setu.pmjay.gov.in/setu/'">
+            <i class="material-icons icon">login</i>
+            <h3>CSC <br> Login</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://nha.gov.in/'">
+            <i class="material-icons icon">language</i>
+            <h3>Official <br> Website</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.nha.ayushmankyc'">
+            <i class="material-icons icon">get_app</i>
+            <h3>Download <br> Mobile App</h3>
+            <button class="btn">Click Here</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>
+

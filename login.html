@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDS Login - Modern</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body class="login-body">
+    <div class="login-card">
+    <div class="header-box">
+        <img src="aman100.jpg" alt="Logo" class="login-logo">
+        <h2 class="company-name">AMAN DIGITAL</h2>
+        <p class="welcome-text">Please login to your account.</p>
+    </div>
+
+        <form>
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="your@email.com" required>
+            </div>
+
+              <div class="input-group">
+    <label>Password</label>
+    <div class="pass-wrapper">
+        <input type="password" id="password" placeholder="Your password">
+        <i class="fa-regular fa-eye" id="togglePassword"></i> </div>
+</div>
+
+            <div class="forgot-links">
+                <a href="javascript:void(0)" onclick="forgotUsername()">Forgot Username?</a>
+
+                <a href="javascript:void(0)" onclick="forgotPassword()">Forgot Password?</a>
+
+            </div>
+<button type="button" onclick="validateLogin()" style="width: 100%; padding: 12px; background-color: #2e7d32; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">
+    Sign In
+</button>
+
+
+        <div class="contact-box">
+    <p><span>📞</span> Customer Care: +91-8409805470</p>
+    <p><span>📧</span> aman@gmail.com</p>
+</div>
+
+        </div>
+    </div>
+    <script>
+function validateLogin() {
+    // Input fields se data nikalna
+    var email = document.getElementById("email_input").value; // dhyan dein ki input ki id 'email_input' ho
+    var password = document.getElementById("pass_input").value; // dhyan dein ki input ki id 'pass_input' ho
+
+    // Validation logic
+    if (email === "" || password === "") {
+        alert("Kripya Email aur Password dono bharein!");
+    } 
+    else if (email === "aman@gmail.com" && password === "840980") {
+        alert("Login Safal!");
+        window.location.href = "dashboard.html"; // Dashboard file ka sahi link
+    } 
+    else {
+        alert("Galat details! Sahi Email/Password dalein.");
+        
+    }
+}
+</script>
+
+<script>
+function validateLogin() {
+    // Input se email aur password lena (check karein ki aapne input tags ko ye ID di hai)
+    var email = document.querySelector('input[type="email"]').value;
+    var password = document.querySelector('input[type="password"]').value;
+
+    // Check karne ka logic
+    if (email === "@" && password === "a") {
+        alert("Login Successful Aman!");
+        window.location.href = "dashboard.html"; 
+    } else {
+        alert("Galat Email ya Password! Kripya sahi details dalein.");
+    }
+}
+</script>
+<script>
+function forgotPassword() {
+    // Purane prompt ki jagah naya modal khulega
+    document.getElementById("forgotModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("forgotModal").style.display = "none";
+}
+
+function handleForgotSubmit() {
+    let email = document.getElementById("forgotEmail").value;
+    if (email === "admin@gmail.com") {
+        alert("Success! Aapka password '123456' hai.");
+        closeModal();
+    } else {
+        alert("Email nahi mila!");
+    }
+}
+</script>
+<div id="forgotModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:15px; width:85%; max-width:400px; text-align:center; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <h3 style="color:#2e7d32; margin-bottom:15px;">Reset Password</h3>
+        <p style="font-size:14px; color:#666; margin-bottom:20px;">Apna registered email dalein:</p>
+        <input type="email" id="forgotEmail" placeholder="your@email.com" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-bottom:20px; outline:none;">
+        <div style="display:flex; gap:10px;">
+            <button onclick="closeModal()" style="flex:1; padding:10px; border-radius:8px; border:1px solid #ccc; background:none; cursor:pointer;">Cancel</button>
+            <button onclick="handleForgotSubmit()" style="flex:1; padding:10px; border-radius:8px; border:none; background:#2e7d32; color:white; cursor:pointer; font-weight:bold;">Submit</button>
+        </div>
+    </div>
+</div>
+<script>
+function forgotUsername() {
+    // Old prompt ki jagah naya modal khulega
+    document.getElementById("usernameModal").style.display = "flex";
+}
+
+function closeUserModal() {
+    document.getElementById("usernameModal").style.display = "none";
+}
+
+function handleUserSubmit() {
+    let mobile = document.getElementById("forgotMobile").value;
+    
+    // Aapka demo mobile number validation
+    if (mobile === "6203113850") {
+        alert("Success! Aapka Username hai: admin_aman");
+        closeUserModal();
+    } else if (mobile === "") {
+        alert("Kripya number dalein!");
+    } else {
+        alert("Ye number hamare record mein nahi hai.");
+    }
+}
+</script>
+<div id="usernameModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1001; align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:15px; width:85%; max-width:400px; text-align:center; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <h3 style="color:#2e7d32; margin-bottom:15px;">Recover Username</h3>
+        <p style="font-size:14px; color:#666; margin-bottom:20px;">Apna registered Mobile Number dalein:</p>
+        <input type="number" id="forgotMobile" placeholder="91XXXXXXXX" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-bottom:20px; outline:none;">
+        <div style="display:flex; gap:10px;">
+            <button onclick="closeUserModal()" style="flex:1; padding:10px; border-radius:8px; border:1px solid #ccc; background:none; cursor:pointer;">Cancel</button>
+            <button onclick="handleUserSubmit()" style="flex:1; padding:10px; border-radius:8px; border:none; background:#2e7d32; color:white; cursor:pointer; font-weight:bold;">Get Username</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

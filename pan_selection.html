@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN Card Selection</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, #4ef1e1 0%, #30cfd0 100%);
+            border-radius: 25px;
+            padding: 25px 10px;
+            text-align: center;
+            color: #1a4a44;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon { font-size: 50px !important; margin-bottom: 8px; pointer-events: none; }
+        .card h3 { font-size: 14px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.1; text-transform: uppercase; pointer-events: none; }
+
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            pointer-events: none;
+        }
+
+        .clicked { transform: scale(0.94); filter: brightness(0.95); }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">PAN CARD SELECTION</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='nsdl_service.html'">
+            <i class="material-icons icon">account_balance</i>
+            <h3>NSDL PAN <br> SERVICES</h3>
+            <button class="btn">Click here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='uti.html'">
+            <i class="material-icons icon">payments</i>
+            <h3>UTI PAN <br> SERVICES</h3>
+            <button class="btn">Click here</button>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>
+
+

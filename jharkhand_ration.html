@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JHARKHAND RATION SERVICES</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f1f8e9; /* Your Premium Light Green */
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: #00bcd4; /* Cyan color from your screenshot */
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Ration Service Premium Green Gradient */
+        .card {
+            background: linear-gradient(180deg, #81c784 0%, #2e7d32 100%);
+            border-radius: 25px;
+            padding: 22px 10px;
+            text-align: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon {
+            font-size: 45px !important;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .card h3 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            line-height: 1.2;
+            height: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Your Signature Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .clicked {
+            transform: scale(0.94);
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">Jharkhand Ration Services</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='https://jsfss.jharkhand.gov.in/SeccCardholderAddTemps/register'">
+            <i class="material-icons icon">assignment_ind</i>
+            <h3>NEW RATION CARD <br> APPLY</h3>
+            <button class="btn">CLICK HERE</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://jsfss.jharkhand.gov.in/NfsaCardholders/ercmsSearch'">
+            <i class="material-icons icon">fact_check</i>
+            <h3>CHECK APPLICANT <br> STATUS</h3>
+            <button class="btn">CLICK HERE</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://jsfss.jharkhand.gov.in/NfsaCardholders/ercmsSearch'">
+            <i class="material-icons icon">format_list_bulleted</i>
+            <h3>CHECK NAME IN <br> RATION LIST</h3>
+            <button class="btn">CLICK HERE</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://jsfss.jharkhand.gov.in/SeccCardholders/login/'">
+            <i class="material-icons icon">login</i>
+            <h3>ALREADY <br> REGISTERED</h3>
+            <button class="btn">CLICK HERE</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://jsfss.jharkhand.gov.in/SeccCardholders/login/'">
+            <i class="material-icons icon">group_add</i>
+            <h3>ADD NEW <br> MEMBER</h3>
+            <button class="btn">CLICK HERE</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://aahar.jharkhand.gov.in/'">
+            <i class="material-icons icon">public</i>
+            <h3>OFFICIAL <br> WEBSITE</h3>
+            <button class="btn">CLICK HERE</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>

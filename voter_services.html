@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOTER ID SERVICES</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f1f8e9; /* Premium Light Green Background */
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a237e; /* Election Blue */
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Voter Premium Blue Gradient */
+        .card {
+            background: linear-gradient(180deg, #3949ab 0%, #1a237e 100%);
+            border-radius: 25px;
+            padding: 22px 10px;
+            text-align: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon {
+            font-size: 45px !important;
+            margin-bottom: 5px;
+            color: #ffffff;
+            pointer-events: none;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            line-height: 1.2;
+            pointer-events: none;
+        }
+
+        /* Your Signature Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        /* Click Feedback */
+        .clicked {
+            transform: scale(0.94);
+            filter: brightness(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">Voter ID (Election Seva) Services</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='https://electoralsearch.eci.gov.in/'">
+            <i class="material-icons icon">person_search</i>
+            <h3>वोटर लिस्ट में <br> नाम खोजें</h3>
+             <a href="https://electoralsearch.eci.gov.in/uesfmempmlkypo" target="_blank">
+            <button class="btn">Click Here</button>
+      </a>  </div>
+
+        <div class="card" onclick="window.location.href='https://www.voters.eci.gov.in/'">
+            <i class="material-icons icon">file_download</i>
+            <h3>वोटर कार्ड <br> डाउनलोड (e-EPIC)</h3>
+            <a href="https://voters.eci.gov.in/home/e-epic-download" target="_blank">
+            <button class="btn">Click Here</button>
+      </a>  </div>
+
+        <div class="card" onclick="window.location.href='https://voters.eci.gov.in/registration-details/form6'">
+            <i class="material-icons icon">how_to_reg</i>
+            <h3>नया वोटर कार्ड <br> रजिस्ट्रेशन (Form 6)</h3>
+            <a href="https://voters.eci.gov.in/signup" target="_blank">
+            <button class="btn">Click Here</button>
+     </a>   </div>
+
+        <div class="card" onclick="window.location.href='https://voters.eci.gov.in/registration-details/form8'">
+            <i class="material-icons icon">edit_note</i>
+            <h3>वोटर कार्ड में <br> सुधार (Form 8)</h3>
+            <a href="https://voters.eci.gov.in/form8" target="_blank">
+            <button class="btn">Click Here</button>
+     </a>   </div>
+
+        <div class="card" onclick="window.location.href='https://voters.eci.gov.in/track'">
+            <i class="material-icons icon">near_me</i>
+            <h3>एप्लीकेशन <br> स्टेटस ट्रैक करें</h3>
+            <a href="https://voters.eci.gov.in/home/track" target="_blank">
+            <button class="btn">Click Here</button>
+     </a>   </div>
+
+        <div class="card" onclick="window.location.href='https://electoralsearch.eci.gov.in/pollingstation'">
+            <i class="material-icons icon">where_to_vote</i>
+            <h3>वोटर कार्ड EPIC <br>नंबर जाने</h3>
+            <a href="https://electoralsearch.eci.gov.in/" target="_blank">
+            <button class="btn">Click Here</button>
+    </a>    </div>
+
+        <div class="card" onclick="window.location.href='https://voters.eci.gov.in/'">
+            <i class="material-icons icon">language</i>
+            <h3>ऑफिसियल वोटर <br> सर्विस पोर्टल</h3>
+            <a href="https://voters.eci.gov.in/" target="_blank">
+            <button class="btn">Click Here</button>
+     </a>   </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>

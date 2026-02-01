@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM KISAN SERVICES</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f4f9f4;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Light Green Premium Gradient */
+        .card {
+            background: linear-gradient(180deg, #96e6a1 0%, #d4fc79 100%);
+            border-radius: 25px;
+            padding: 22px 10px;
+            text-align: center;
+            color: #1b5e20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon {
+            font-size: 45px !important;
+            margin-bottom: 5px;
+            color: #1b5e20;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            line-height: 1.2;
+        }
+
+        /* Signature Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+
+        .clicked {
+            transform: scale(0.94);
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">PM Kisan Samman Nidhi Services</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='https://exlink.pmkisan.gov.in/aadharekyc.aspx'">
+            <i class="material-icons icon">fingerprint</i>
+            <h3>e-KYC <br> करें</h3>
+             <a href="https://pmkisan.gov.in/homenew.aspx" target="_blank">
+            <button class="btn">Click Here</button>
+       </a> </div>
+
+        <div class="card" onclick="window.location.href='https://pmkisan.gov.in/BeneficiaryStatus_New.aspx'">
+            <i class="material-icons icon">fact_check</i>
+            <h3>e-KYC हुआ की <br> नहीं जाने</h3>
+            <a href="https://pmkisan.gov.in/homenew.aspx" target="_blank">
+            <button class="btn">Click Here</button>
+      </a>  </div>
+
+        <div class="card" onclick="window.location.href='https://pmkisan.gov.in/RegistrationFormNew.aspx'">
+            <i class="material-icons icon">person_add</i>
+            <h3>नए किसान का <br> रजिस्ट्रेशन</h3>
+             <a href="https://pmkisan.gov.in/RegistrationFormupdated.aspx" target="_blank">
+            <button class="btn">Click Here</button>
+     </a>   </div>
+
+        <div class="card" onclick="window.location.href='https://pmkisan.gov.in/BeneficiaryStatus_New.aspx'">
+            <i class="material-icons icon">account_circle</i>
+            <h3>सेल्फ रजिस्टर्ड <br> किसान स्टेटस/CSC</h3>
+            <a href="https://pmkisan.gov.in/FarmerStatus.aspx" target="_blank">
+            <button class="btn">Click Here</button>
+    </a>    </div>
+
+        <div class="card" onclick="window.location.href='https://pmkisan.gov.in/UpdateFarmerDetails.aspx'">
+            <i class="material-icons icon">edit_note</i>
+            <h3>सेल्फ रजिस्टर्ड <br> किसान अपडेट</h3>
+             <a href="https://pmkisan.gov.in/FarmerStatus.aspx" target="_blank">
+            <button class="btn">Click Here</button>
+      </a>  </div>
+    </div>
+
+    <script>
+        // Click feedback animation
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>
+  

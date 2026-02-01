@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijli Bill Services</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-box {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 Column Layout */
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Modern Gradient Cards */
+        .card {
+            border-radius: 30px;
+            padding: 25px 10px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 180px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        /* Colors as per your premium theme */
+        .c1 { background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%); } /* Cyan Blue */
+        .c2 { background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%); } /* Pinkish Red */
+        .c3 { background: linear-gradient(180deg, #43e97b 0%, #38f9d7 100%); } /* Green/Teal */
+
+        .icon {
+            font-size: 50px !important;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 13px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        /* White Capsule Button */
+        .btn {
+            background: white;
+            color: #333;
+            border: none;
+            padding: 8px 22px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.1s;
+        }
+
+        /* Click/Touch Effect */
+        .clicked {
+            transform: scale(0.92);
+            filter: brightness(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-box">Bijli Bill Services</div>
+
+    <div class="grid-container">
+        <div class="card c1">
+            <i class="material-icons icon">receipt_long</i>
+            <h3>Check <br> Bijli Bill</h3>
+         <a href="https://suvidha.jbvnl.co.in/epi/login.aspx" target="_blank">
+            <button class="btn">Click here</button>
+      </a>  </div>
+
+        <div class="card c2">
+            <i class="material-icons icon">volunteer_activism</i>
+            <h3>Bijli Bill Rahat <br> Yojna 2026</h3>
+            <a href="https://jharnet.com/jharkhand-bijli-bill-mafi-yojana/" target="_blank">
+            <button class="btn">Click here</button>
+       </a> </div>
+
+        <div class="card c3">
+            <i class="material-icons icon">calculate</i>
+            <h3>Bijli Bill <br> Calculator</h3>
+            <a href="https://cportal.jbvnl.co.in/cportal/#/guest/secure/searchbill" target="_blank">
+            <button class="btn">Click here</button>
+       </a> </div>
+    </div>
+
+    <script>
+        // Visual Feedback for Touch/Click
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const feedback = () => card.classList.toggle('clicked');
+            card.addEventListener('mousedown', feedback);
+            card.addEventListener('mouseup', feedback);
+            card.addEventListener('touchstart', feedback);
+            card.addEventListener('touchend', feedback);
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Aman Private Limited</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; margin: 0; padding: 15px; }
+        .back-nav { margin-bottom: 20px; display: block; text-decoration: none; color: #333; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <a href="dashboard.html" class="back-nav"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+
+    <div class="wallet-container">
+        <div class="balance-card">
+            <p>Available Balance</p>
+            <h1>₹ 1,500.00</h1>
+            <button class="add-money-btn"><i class="fas fa-plus-circle"></i> Add Money</button>
+        </div>
+
+        <div class="transaction-section">
+            <h3>Recent Transactions</h3>
+            <div class="transaction-item">
+                <div class="trans-info">
+                    <i class="fas fa-arrow-down-circle income"></i>
+                    <div>
+                        <p class="trans-name">Added to Wallet</p>
+                        <small>27 Jan 2026</small>
+                    </div>
+                </div>
+                <p class="trans-amount plus">+ ₹500</p>
+            </div>
+        </div>
+    </div>
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Add Money to Wallet</h2>
+        
+        <div class="amount-input">
+            <span class="currency">₹</span>
+            <input type="number" id="walletAmount" placeholder="Enter Amount" value="500">
+        </div>
+
+        <div class="quick-amounts">
+            <button onclick="setAmount(100)">+100</button>
+            <button onclick="setAmount(500)">+500</button>
+            <button onclick="setAmount(1000)">+1000</button>
+        </div>
+
+        <button class="pay-now-btn" onclick="processPayment()">
+            <i class="fas fa-shield-alt"></i> Proceed to Pay
+        </button>
+    </div>
+</div>
+<script>
+function openModal() {
+    document.getElementById("paymentModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+function setAmount(amt) {
+    document.getElementById("walletAmount").value = amt;
+}
+
+function processPayment() {
+    let amount = document.getElementById("walletAmount").value;
+    alert("Processing payment of ₹" + amount + "... Redirecting to Gateway.");
+    closeModal();
+}
+
+// Button par click event lagaiye
+document.querySelector(".add-money-btn").onclick = openModal;
+</script>
+</body>
+</html>
+

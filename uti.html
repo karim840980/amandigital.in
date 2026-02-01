@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTI PAN Services</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Aapka Favourite Cyan/Teal Gradient Background */
+        .card {
+            background: linear-gradient(180deg, #4ef1e1 0%, #30cfd0 100%);
+            border-radius: 25px;
+            padding: 22px 10px;
+            text-align: center;
+            color: #1a4a44;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon {
+            font-size: 45px !important;
+            margin-bottom: 5px;
+            color: #1a4a44;
+            pointer-events: none;
+        }
+
+        /* Text Gap bilkul kam */
+        .card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            line-height: 1.1;
+            text-transform: capitalize;
+            pointer-events: none;
+        }
+
+        /* Aapka Favourite Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            pointer-events: none;
+        }
+
+        /* Click hone par visual feedback */
+        .clicked {
+            transform: scale(0.94);
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">UTI PAN SERVICES</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='https://www.pan.utiitsl.com/PAN/mainform.html'">
+            <i class="material-icons icon">person_add</i>
+            <h3>Apply New <br> PAN Card</h3>
+            <a href="https://www.pan.utiitsl.com/newA.html" target="_blank">
+            <button class="btn">Click here</button>
+      </a>  </div>
+
+        <div class="card" onclick="window.location.href='https://www.pan.utiitsl.com/PAN/mainform.html'">
+            <i class="material-icons icon">edit_calendar</i>
+            <h3>PAN Card <br> Correction</h3>
+            <a href="https://www.pan.utiitsl.com/csf.html" target="_blank">
+            <button class="btn">Click here</button>
+       </a> </div>
+
+        <div class="card" onclick="window.location.href='https://www.trackpan.utiitsl.com/PANONLINE/#forward'">
+            <i class="material-icons icon">location_searching</i>
+           <h3>Track PAN <br> Status</h3>
+            <a href="https://www.trackpan.utiitsl.com/PANONLINE/forms/TrackPan/trackApp#forward" target="_blank">
+            <button class="btn">Click here</button>
+      </a>  </div>
+
+        <div class="card" onclick="window.location.href='https://www.pan.utiitsl.com/PAN_ONLINE/ePANCard'">
+            <i class="material-icons icon">file_download</i>
+        <h3>Download <br> e-PAN Card</h3>
+     <a href="https://www.pan.utiitsl.com/PAN_ONLINE/ePANCardHome" target="_blank">
+            <button class="btn">Click here</button>
+       </a> </div>
+    </div>
+
+    <script>
+        // Smooth Click Feedback script
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,504 @@
+/* Reset basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex; /* Sidebar aur Content side-by-side */
+    background-color: #f4f7f6;
+}
+
+/* Sidebar Container */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, #1b5e20 0%, #2e7d32 100%); /* Green Gradient */
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Welcome User Section (Top) */
+.user-profile {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Sidebar Menu Links */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-item {
+    margin-bottom: 15px;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* White line niche */
+    transition: 0.3s;
+}
+
+.menu-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.menu-link i {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Logout Button (Special Style) */
+.logout-btn {
+    background: white;
+    color: #d32f2f;
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Cards / Dashboard Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card i {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #2e7d32;
+}
+
+.amount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+.services-container {
+    padding: 20px 0;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1b5e20;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2e7d32;
+    display: inline-block;
+}
+
+.services-grid {
+    display: grid;
+    /* Isse ek line mein hamesha sirf 3 box hi rahenge */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; /* Box ke beech ka gap */
+    padding: 10px;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: #f1f8e9;
+    color: #2e7d32;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.service-card h4 {
+    font-size: 11px; /* Choti screen ke liye font thoda chota */
+    margin: 2px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 9px;
+    color: #777;
+}
+
+
+/* For Mobile screens */
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 box in one row */
+    }
+}
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Sidebar upar aur content niche karne ke liye */
+    }
+
+    .sidebar {
+        width: 100%; /* Mobile par full width */
+        height: auto;
+        padding: 10px;
+        position: relative;
+    }
+
+    .sidebar h2, .logo-section h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    /* Menu items ko ek line mein lane ke liye (Horizontal Menu) */
+    nav {
+        display: flex;
+        overflow-x: auto; /* Agar items zyada hon toh scroll ho sake */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .menu-item {
+        padding: 8px 12px;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* Stats Cards (Balance wale) ko 2-2 ya 1-1 dikhane ke liye */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Service Grid ko hamesha 3 box mein rakhne ke liye */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px;
+    }
+
+    .service-card {
+        padding: 10px 5px;
+    }
+
+    .service-card h4 {
+        font-size: 10px;
+    }
+/* 1. Sidebar Panel ko theek karne ke liye */
+.sidebar-panel {
+    display: flex !important;
+    flex-direction: column !important; /* Items ko upar-niche karne ke liye */
+    align-items: flex-start;
+    padding: 20px 15px;
+    width: 280px;
+    background-color: #1b5e20;
+}
+
+/* 2. Links ko row se hatakar column mein lane ke liye */
+.menu-links {
+    display: flex !important;
+    flex-direction: column !important; /* Sabse zaroori line */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* 3. Har link ki styling (Photo 2 jaisa) */
+.menu-links a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* Woh safed line */
+}
+
+/* 4. Logout ko sahi jagah lane ke liye */
+.logout-btn-sidebar {
+    width: 100%;
+    margin-top: 20px;
+    display: block;
+}
+/* Menu ki design */
+.side-nav {
+    height: 100%;
+    width: 0; /* Shuruat mein hidden rahega */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #ffffff; /* Dashboard ki theme ke hisaab se white ya dark */
+    overflow-x: hidden;
+    transition: 0.3s; /* Smooth opening effect */
+    padding-top: 60px;
+    box-shadow: 2px 0px 5px rgba(0,0,0,0.2);
+}
+
+/* Menu links ki design */
+.side-nav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.side-nav a:hover {
+    background-color: #f9f9f9;
+}
+
+/* Close button positioning */
+.side-nav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    border-bottom: none;
+}
+.wallet-container {
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.add-money-btn {
+    background: #fff;
+    color: #1e3c72;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.transaction-section {
+    margin-top: 30px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.trans-info { display: flex; align-items: center; gap: 15px; }
+
+.income { color: #28a745; font-size: 24px; }
+.expense { color: #dc3545; font-size: 24px; }
+
+.plus { color: #28a745; font-weight: bold; }
+.minus { color: #dc3545; font-weight: bold; }
+.modal {
+    display: none; position: fixed; z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff; margin: 20% auto; padding: 25px;
+    border-radius: 15px; width: 85%; max-width: 400px;
+    text-align: center; position: relative;
+}
+
+.amount-input {
+    margin: 20px 0; display: flex; align-items: center;
+    border: 2px solid #1e3c72; border-radius: 10px; padding: 10px;
+}
+
+.amount-input input {
+    border: none; outline: none; font-size: 20px; width: 100%; text-align: center;
+}
+
+.quick-amounts { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+
+.quick-amounts button {
+    padding: 8px 15px; border: 1px solid #ddd; border-radius: 5px; background: #f8f9fa; cursor: pointer;
+}
+
+.pay-now-btn {
+    background: #28a745; color: white; border: none; padding: 15px;
+    width: 100%; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer;
+}
+
+.close-modal { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
+.news-container {
+    background: #fff;
+    margin: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.news-title {
+    background: #dc3545; /* Red color for 'Update' */
+    color: white;
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.news-text {
+    font-size: 14px;
+    color: #333;
+    padding: 5px 0;
+}
+.search-container {
+    padding: 10px 15px;
+}
+
+.search-box {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+.search-box i {
+    color: #888;
+    margin-right: 10px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: #333;
+}
+/* Dashboard ke boxes ko sahi karne ke liye */
+.service-box {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Content ko vertical centre rakhega */
+    align-items: center;
+    min-height: 60px; /* Height badha di taaki text andar rahe */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden; /* Bahar nikalne wala content chhupa dega */
+}
+
+/* Icon ka size control karne ke liye */
+.service-box .icon-box img {
+    width: 30x !important; /* */
+    height: 30px;
+    margin-bottom: 8px;
+}
+
+/* Text styling */
+.service-box h4 {
+    font-size: 13px;
+    margin: 5px 0 2px 0;
+    color: #333;
+}
+
+.service-box p {
+    font-size: 11px;
+    color: #777;
+    margin: 0;
+}
+/* Dashboard ka wo box jis par click karna hota hai */
+.service-box {
+    background: #ffffff;
+    border-radius: 8px; /* Box ke kinare rounded */
+    padding: 8px 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Content ko beech mein rakhne ke liye */
+    align-items: center;
+    min-height: 70px; /* Isse Ration Card aur baki boxes ki height barabar ho jayegi */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Box ke andar ka Title - BOLD karne ke liye */
+.service-box h4 {
+    font-size: 10px;
+    font-weight: 500; /* Extra bold text jaisa aapne manga */
+    color: #333;
+    margin: 8px 0 2px 0;
+}
+
+/* Box ke andar ka chota text (PDS Portal, etc.) */
+.service-box p {
+    font-size: 9px;
+    font-weight: 600; /* Isse niche wala text bhi bold dikhega */
+    color: #666;
+    margin: 0;
+}
+

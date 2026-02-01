@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM AWAS YOJANA</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f0f7ff;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0d47a1;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* PM Awas Premium Blue Gradient */
+        .card {
+            background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 25px;
+            padding: 22px 10px;
+            text-align: center;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon {
+            font-size: 45px !important;
+            margin-bottom: 5px;
+            color: #fff;
+            pointer-events: none;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            pointer-events: none;
+        }
+
+        /* Signature Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            pointer-events: none;
+        }
+
+        .clicked {
+            transform: scale(0.94);
+            filter: brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">PM Awas Yojana Services</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='https://rhreporting.nic.in/netiay/Benificiary.aspx'">
+            <i class="material-icons icon">holiday_village</i>
+            <h3>आवास योजना <br> ग्रामीण लिस्ट</h3>
+            <a href="https://rhreporting.nic.in/netiay/SocialAuditReport/BeneficiaryDetailForSocialAuditReport.aspx" target="_blank">
+            <button class="btn">Click Here</button>
+      </a>  </div>
+
+        <div class="card" onclick="window.location.href='https://pmaymis.gov.in/Track_Application_Status.aspx'">
+            <i class="material-icons icon">apartment</i>
+            <h3>आवास योजना <br> शहरी स्थिति</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://pmaymis.gov.in/Open/Check_Aadhar_Existence.aspx?comp=b'">
+            <i class="material-icons icon">person_search</i>
+            <h3>नाम से <br> खोजें</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://pmayg.nic.in/'">
+            <i class="material-icons icon">home</i>
+            <h3>ग्रामीण आवास <br> मुख्य वेबसाइट</h3>
+            <button class="btn">Click Here</button>
+        </div>
+    </div>
+
+    <script>
+        // Click feedback animation
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>

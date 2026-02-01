@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All States Ration Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f1f8e9; /* Your Light Green Theme */
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-bar {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 18px 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .icon-box {
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .icon-box i {
+            color: #2e7d32;
+            font-size: 22px;
+        }
+
+        .card h3 {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        /* Your Signature Purple Button */
+        .btn {
+            background: #9b59b6;
+            color: white;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .clicked {
+            transform: scale(0.94);
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">Select Your State</div>
+
+    <div class="grid-container">
+        <div class="card" onclick="window.location.href='jharkhand_ration.html'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Jharkhand <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://epds.bihar.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Bihar <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://fcs.up.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Uttar Pradesh <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://nfsa.samagra.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Madhya Pradesh <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://food.wb.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>West Bengal <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://food.rajasthan.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Rajasthan <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://haryanafood.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Haryana <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='http://foododisha.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Odisha <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://khadya.cg.nic.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Chhattisgarh <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+
+        <div class="card" onclick="window.location.href='https://dcs-dof.gujarat.gov.in/'">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <h3>Gujarat <br> Ration</h3>
+            <button class="btn">Click Here</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>
+
+

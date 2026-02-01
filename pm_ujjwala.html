@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSMAN SERVICE</title>
+    <style>
+        /* CSS Styles */
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* कार्ड का मुख्य डिज़ाइन */
+        .card {
+            border-radius: 30px;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ग्रैडिएंट्स */
+        .indane { background: linear-gradient(180deg, #33ccff 0%, #33fbff 100%); }
+        .hp { background: linear-gradient(180deg, #5c6bc0 0%, #7986cb 100%); }
+        .bharat { background: linear-gradient(180deg, #f48fb1 0%, #ff4081 100%); }
+
+        .logo-box img {
+            width: 80px;
+            height: auto;
+            filter: brightness(0) invert(1); /* लोगो को सफ़ेद करने के लिए */
+        }
+
+        .gas-name {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* व्हाइट कैप्सूल बटन */
+        .click-btn {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
+
+        /* क्लिक करने पर इफ़ेक्ट */
+        .clicked {
+            transform: scale(0.92);
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card indane">
+        <div class="logo-box">
+            <img src="indian.png" alt="Indane">
+        </div>
+        <h4 class="gas-name">INDANE GAS</h4>
+        <button class="click-btn" onclick="location.href='https://access.ex.indianoil.in/oam/server/obrareq.cgi'">Click here</button>
+    </div>
+
+    <div class="card hp">
+        <div class="logo-box">
+            <img src="hp.png" alt="HP">
+        </div>
+        <h4 class="gas-name">HP GAS</h4>
+        <button class="click-btn" onclick="location.href='https://myhpgas.in/myHPGas/Index.aspx'">Click here</button>
+    </div>
+
+    <div class="card bharat">
+        <div class="logo-box">
+            <img src="bharat.png" alt="Bharat">
+        </div>
+        <h4 class="gas-name">BHARAT GAS</h4>
+        <button class="click-btn" onclick="location.href='https://my.ebharatgas.com/bharatgas/LPGServices/ApplyUjjwala2Connection'">Click here</button>
+    </div>
+
+    <script>
+        // क्लिक विज़ुअल फ़ीडबैक के लिए
+        const buttons = document.querySelectorAll('.click-btn');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', () => button.classList.add('clicked'));
+            button.addEventListener('mousedown', () => button.classList.add('clicked'));
+            button.addEventListener('touchend', () => button.classList.remove('clicked'));
+            button.addEventListener('mouseup', () => button.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>
+

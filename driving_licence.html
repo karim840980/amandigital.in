@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving Licence Services</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        /* --- CSS Section --- */
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* दो कॉलम लेआउट */
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* कार्ड का मुख्य डिज़ाइन */
+        .card {
+            border-radius: 25px;
+            padding: 25px 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 180px;
+            transition: all 0.2s ease;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* अलग-अलग सुंदर ग्रैडिएंट्स */
+        .c1 { background: linear-gradient(180deg, #00d2ff 0%, #3a7bd5 100%); }
+        .c2 { background: linear-gradient(180deg, #a8e063 0%, #56ab2f 100%); }
+        .c3 { background: linear-gradient(180deg, #9d50bb 0%, #6e48aa 100%); }
+        .c4 { background: linear-gradient(180deg, #ff9966 0%, #ff5e62 100%); }
+        .c5 { background: linear-gradient(180deg, #2193b0 0%, #6dd5ed 100%); }
+        .c6 { background: linear-gradient(180deg, #ee0979 0%, #ff6a00 100%); }
+
+        .icon {
+            font-size: 45px !important;
+            margin-bottom: 5px;
+            opacity: 0.95;
+        }
+
+        .card h3 {
+            font-size: 13px;
+            font-weight: 600;
+            margin: 10px 0;
+            line-height: 1.3;
+        }
+
+        /* सफ़ेद कैप्सूल बटन */
+        .click-btn {
+            background: white;
+            color: #333;
+            border: none;
+            padding: 7px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.1s;
+        }
+
+        /* क्लिक करने पर दबने वाला असर */
+        .clicked {
+            transform: scale(0.92);
+            filter: brightness(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">Driving Licence Services</div>
+
+    <div class="grid-container">
+        <div class="card c1" onclick="console.log('Clicked')">
+            <i class="material-icons icon">phone_android</i>
+            <h3>Mobile Update <br> in DL</h3>
+            <a href="https://sarathi.parivahan.gov.in/sarathiservice/mobNumUpdpub.do" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+        <div class="card c2">
+            <i class="material-icons icon">directions_car</i>
+            <h3>Update Vehicle <br> Mobile</h3>
+             <a href="https://vahan.parivahan.gov.in/mobileupdate/vahan/ui/statevalidation/editMobileNumber.xhtml" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c3">
+            <i class="material-icons icon">menu_book</i>
+            <h3>Apply Learning <br> Licence</h3>
+            <a href="https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c4">
+            <i class="material-icons icon">badge</i>
+            <h3>Apply Driving <br> Licence</h3>
+             <a href="https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c5">
+            <i class="material-icons icon">manage_search</i>
+            <h3>Check DL <br> Status</h3>
+            <a href="https://parivahan.gov.in/rcdlstatus/?pur_cd=101" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c6">
+            <i class="material-icons icon">print</i>
+            <h3>Reprint <br> RC</h3>
+            <a href="https://parivahan.gov.in/parivahan//node/1978" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+    </div>
+
+    <script>
+        /* --- JavaScript Section for Feedback --- */
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            // मोबाइल टच के लिए
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+            
+            // माउस क्लिक के लिए
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('mouseleave', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>

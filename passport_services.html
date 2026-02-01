@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Services</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-title {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* कार्ड का मुख्य स्टाइल */
+        .card {
+            border-radius: 30px;
+            padding: 30px 10px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 200px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        /* हर कार्ड के लिए अलग ग्रैडिएंट कलर्स */
+        .c1 { background: linear-gradient(180deg, #00c6ff 0%, #0072ff 100%); } /* Blue */
+        .c2 { background: linear-gradient(180deg, #a8e063 0%, #56ab2f 100%); } /* Green */
+        .c3 { background: linear-gradient(180deg, #9d50bb 0%, #6e48aa 100%); } /* Purple */
+        .c4 { background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%); } /* Pink/Red */
+        .c5 { background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%); } /* Cyan */
+        .c6 { background: linear-gradient(180deg, #43e97b 0%, #38f9d7 100%); } /* Teal */
+
+        .icon {
+            font-size: 50px !important;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+        }
+
+        /* व्हाइट प्रीमियम बटन */
+        .click-btn {
+            background: white;
+            color: #333;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.1s;
+        }
+
+        /* क्लिक इफ़ेक्ट */
+        .clicked {
+            transform: scale(0.92);
+            filter: brightness(0.9);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">PASSPORT SERVICES</div>
+
+    <div class="grid-container">
+        <div class="card c1">
+            <i class="material-icons icon">smartphone</i>
+            <h3>Apply For <br> Passport</h3>
+             <a href="https://www.passportindia.gov.in/psp/ApplyPassport" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c2">
+            <i class="material-icons icon">check_circle</i>
+            <h3>Check Appointment <br> Availability</h3>
+            <a href="https://www.passportindia.gov.in/psp/checkAppointmentAvailibility" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c3">
+            <i class="material-icons icon">stars</i>
+            <h3>Track Application <br> Status</h3>
+            <a href="https://www.passportindia.gov.in/psp/trackApplicationService" target="_blank">
+            <button class="click-btn">Click here</button>
+      </a> </div>
+
+        <div class="card c4">
+            <i class="material-icons icon">chat</i>
+            <h3>Register Feedback / <br> Grievance</h3>
+         <a href="https://www.passportindia.gov.in/psp/Grievances" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c5">
+            <i class="material-icons icon">android</i>
+           <h3>Passport<br> Register</h3>
+            <a href="https://services1.passportindia.gov.in/forms/registration?_gl=1%2A7msxxq%2A_ga%2ANjc2NzM0NTIyLjE3NjcwOTk5NTc.%2A_ga_B4255W3J9F%2AczE3NjcwOTk5NTckbzEkZzEkdDE3NjcxMDA5NTUkajM4JGwwJGgw%2A_ga_JTJJBP5DNH%2AczE3NjcwOTk5NTckbzEkZzEkdDE3NjcxMDA5NTUkajM4JGwwJGgw" target="_blank">
+            <button class="click-btn">Click here</button>
+       </a> </div>
+
+        <div class="card c6">
+            <i class="material-icons icon">apple</i>
+            <h3>Passport <br> Login</h3>
+            <a href="https://services1.passportindia.gov.in/forms/PreLogin" target="_blank">
+            <button class="click-btn">Login</button>
+      </a></div>
+    </div>
+
+    <script>
+        // क्लिक फीडबैक के लिए JavaScript
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mousedown', () => card.classList.add('clicked'));
+            card.addEventListener('mouseup', () => card.classList.remove('clicked'));
+            card.addEventListener('touchstart', () => card.classList.add('clicked'));
+            card.addEventListener('touchend', () => card.classList.remove('clicked'));
+        });
+    </script>
+
+</body>
+</html>
+ 
