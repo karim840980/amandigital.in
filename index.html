@@ -268,6 +268,44 @@ function toggleMenu() {
       .catch((error) => alert(error.message));
   }
 </script>
+<div id="install-ui" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#2563eb; color:white; padding:12px 25px; border-radius:50px; box-shadow:0 4px 15px rgba(0,0,0,0.2); z-index:9999; display:flex; align-items:center; gap:10px; border:2px solid white;">
+    <span style="font-weight:bold; font-size:14px;">Install Aman Digital App</span>
+    <button id="btnInstall" style="background:white; color:#2563eb; border:none; padding:5px 15px; border-radius:20px; font-weight:bold; cursor:pointer;">INSTALL</button>
+</div>
 
+<script>
+    let deferredPrompt;
+    const installUI = document.getElementById('install-ui');
+    const btnInstall = document.getElementById('btnInstall');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Browser ka default popup roko
+        e.preventDefault();
+        // Event save karo
+        deferredPrompt = e;
+        // Apna custom button dikhao
+        installUI.style.display = 'flex';
+    });
+
+    btnInstall.addEventListener('click', () => {
+        // Button hide karo
+        installUI.style.display = 'none';
+        // Install prompt dikhao
+        deferredPrompt.prompt();
+        // User ka decision check karo
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User installed the app');
+            }
+            deferredPrompt = null;
+        });
+    });
+
+    // Agar app pehle se installed hai toh button mat dikhao
+    window.addEventListener('appinstalled', () => {
+        installUI.style.display = 'none';
+    });
+</script>
+    
 </body>
 </html>
