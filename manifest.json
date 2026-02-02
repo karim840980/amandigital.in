@@ -1,0 +1,20 @@
+{
+  "name": "Aman Digital Services",
+  "short_name": "AmanDigital",
+  "start_url": "/amandigital.in/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "https://karim840980.github.io/amandigital.in/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://karim840980.github.io/amandigital.in/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
