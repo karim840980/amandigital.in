@@ -1,7 +1,15 @@
+const cacheName = 'aman-v2';
+const assets = [
+  './',
+  './index.html',
+  './logo.png',
+  './style.css'
+];
+
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open('aman-v1').then((cache) => {
-      return cache.addAll(['/amandigital.in/']);
+    caches.open(cacheName).then((cache) => {
+      return cache.addAll(assets);
     })
   );
 });
